@@ -19,8 +19,10 @@
       <td><%= survey.comment %></td>
       <td>
         <%= link_to('Supprimer', survey_path(survey), method: :delete, class: 'btn btn-danger btn-xs') %>
+        <%= link_to('Modifier', edit_survey_path(survey), class: 'btn btn-success btn-xs') %>
       </td>
     </tr>
     <% end %>
   </tbody>
 </table>
+<%= link_to('Ajouter un questionnaire', new_survey_path, class: 'btn btn-primary pull-right') %>
