@@ -2,13 +2,20 @@
 <html>
 <head>
   <title>LfTest</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= stylesheet_link_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css", media: "all" %>
+  <%= stylesheet_link_tag "application" %>
+
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js" %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="container">
 
-<%= yield %>
+  <h1 class="jumbotron text-center">Application</h1>
+
+  <%= render 'partials/flash_message' %>
+
+  <%= yield %>
 
 </body>
 </html>

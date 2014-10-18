@@ -1,0 +1,26 @@
+<h2>Liste des questionnaires</h2>
+
+<table class="table table-hover table-bordered">
+  <thead>
+    <tr>
+      <th>Titre</th>
+      <th>Utilisateur</th>
+      <th>Email</th>
+      <th>Commentaire</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @surveys.each do |survey| %>
+    <tr>
+      <td><%= survey.title %></td>
+      <td><%= survey.user_name %></td>
+      <td><%= survey.user_email %></td>
+      <td><%= survey.comment %></td>
+      <td>
+        <%= link_to('Supprimer', survey_path(survey), method: :delete, class: 'btn btn-danger btn-xs') %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
